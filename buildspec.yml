@@ -1,0 +1,26 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo "Starting build process"
+
+  pre_build:
+    commands:
+      - echo "Testing application files"
+      - test -f index.html
+      - test -f appspec.yml
+
+  build:
+    commands:
+      - echo "Application build successful"
+
+  post_build:
+    commands:
+      - echo "Build and testing completed"
+
+artifacts:
+  files:
+    - index.html
+    - appspec.yml
+    - scripts/**/*
